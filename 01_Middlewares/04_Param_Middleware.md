@@ -125,7 +125,7 @@ router.param('monumentId', async (req, res, next, monumentId) => {
 ```javascript
 exports.monumentsUpdate = async (req, res, next) => {
   try {
-    await Monument.findByIdAndUpdate({ _id: req.monument.id });
+    await Post.findByIdAndUpdate(req.post.id, req.body);
     res.status(204).end();
   } catch (error) {
     next(error);
